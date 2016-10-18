@@ -21,3 +21,27 @@
 
 en:
   hello: "Hello world"
+  layout:
+    header:
+      logo: "Book Review"
+      help: "Help"
+      about: "About"
+    footer:
+      develop: "Develop: Ha Van Duc - Nguyen Quoc Thong"
+      phone_contact: "Phone: 0986338546"
+      address_contact: "Framgia VN"
+  pages:
+    home:
+      logo_app: "Logo App"
+      title_page: "Home"
+      title: "Book Review System App"
+    help:
+      title_page: "Help"
+      title: "Help page"
+      content: "Page help"
+    about:
+      title_page: "About"
+      title: "About page"
+      content: "Page about"
+  helper:
+    base_title: "Book Review System"

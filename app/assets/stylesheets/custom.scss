@@ -1,0 +1,50 @@
+@import "bootstrap";
+@import "bootstrap-sprockets";
+
+/* universal */
+
+body {
+  padding-top: 60px;
+  background-image: url("backgroundoffice.jpg");
+  background-repeat: no-repeat;
+ }
+
+section {
+  overflow: auto;
+}
+
+.center {
+  text-align: center;
+  background-color: rgba(255, 165, 0, 0.5);
+}
+
+.center h1 {
+  color: forestgreen;
+}
+
+/* typography */
+
+h1{
+  line-height: 1;
+}
+#logo{
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: forestgreen;
+  padding: 5px;
+  font-weight: bold;
+}
+#logo:hover{
+  //Chi chuot
+  color: #000;
+  text-decoration: none;
+}
+
+
+/*  footer*/
+footer{
+  margin-top: 10px;
+  padding-top: 5px;
+  border-top: 1px solid #B00100;
+}
