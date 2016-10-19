@@ -35,6 +35,7 @@ en:
       logo_app: "Logo App"
       title_page: "Home"
       title: "Book Review System App"
+
     help:
       title_page: "Help"
       title: "Help page"
@@ -45,3 +46,12 @@ en:
       content: "Page about"
   helper:
     base_title: "Book Review System"
+  sessions:
+    label_signup: "Sign up now!"
+  flash:
+    login_success: "Welcome to the Book-Review!"
+    find_user_fail: "User not found!"
+    errors: "The form contains"
+    error: "error"
+  users:
+    create_user: "Create my account"
