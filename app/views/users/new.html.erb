@@ -1,6 +1,6 @@
-<%= provide :title, t("users.signup") %>
-<h1><%= t "users.signup" %></h1>
-
+<% provide :title, t("users.new.signup") %>
+<% provide(:button_text, t("users.new.form.submit")) %>
+<h1><%= t "users.new.signup" %></h1>
 <div class="row">
-  <%= render "form" %>
+    <%= render "form" %>
 </div>
