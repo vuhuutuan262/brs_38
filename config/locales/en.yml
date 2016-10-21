@@ -26,6 +26,7 @@ en:
       logo: "Book Review"
       help: "Help"
       about: "About"
+      link_categories: "Book Library"
     footer:
       develop: "Develop: Ha Van Duc - Nguyen Quoc Thong"
       phone_contact: "Phone: 0986338546"
@@ -46,6 +47,7 @@ en:
       content: "Page about"
   helper:
     base_title: "Book Review System"
+
   sessions:
     label_signup: "Sign up now!"
     login: "Log in"
@@ -63,3 +65,40 @@ en:
     login_errors: "Invalid email/password combination"
   users:
     create_user: "Create my account"
+
+  book:
+    title: "List Book"
+    new:
+      title: "Create new book"
+      create_new_book: "Create new book"
+    edit:
+      title: "Edit book"
+    index:
+      category_title: "Categories"
+      all_books: "All Books"
+    show:
+      title: "Show book"
+      edit: "Edit"
+      delete: "Delete"
+      confirm: "You sure delete this book?"
+      author: "Author: "
+      description: "Description: "
+  book_controller:
+    book_blank: "Don't find book"
+    update_success: "Update success"
+    create_success: "Create book success"
+    destroy_success: "Delete success"
+
+  share:
+    error_form: "The form contains "
+  app_controller:
+    flash_danger: "Please log in."
+
+  categories:
+    index:
+      title_page: "Categories"
+    show:
+      book_nill: "Don't have book in category"
+    controller:
+      flash_danger: "Don't find category"
+      categories_danger: "Don't find categories"

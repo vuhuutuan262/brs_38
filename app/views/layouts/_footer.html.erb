@@ -1,13 +1,15 @@
 <footer class="footer">
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-5">
         <p><%= t "layout.footer.develop" %></p>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-5">
         <p><%= t("layout.footer.phone_contact") %></p>
         <p><%= t "layout.footer.address_contact" %></p>
       </div>
+      <li><%= link_to t("layout.header.help"), "/pages/help" %></li>
+      <li><%= link_to t("layout.header.about"), "/pages/about" %></li>
     </div>
   </div>
 </footer>
