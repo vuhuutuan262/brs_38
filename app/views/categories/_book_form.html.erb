@@ -1,0 +1,15 @@
+<% @books.each_slice Settings.number_each do |book| %>
+  <div class="row">
+    <% book.each do |book| %>
+      <div class="col-md-3 index-grid-image">
+        <% if book.cover? %>
+          <%= link_to image_tag(book.cover.url,
+            class: "book_cover_img center-block"), book_path(book) %>
+        <% else %>
+          <%= link_to image_tag("coverdefault.jpg",
+            class: "book_cover_img center-block"), book %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

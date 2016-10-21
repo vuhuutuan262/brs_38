@@ -1,0 +1,21 @@
+<% provide :title, @category.category_name %>
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-3">
+      <%= render "categories/category_form" %>
+    </div>
+
+    <div class="col-md-9">
+      <% if @books.blank? %>
+        <h2><%= t "categories.show.book_nill" %></h2>
+      <% else %>
+        <h2><%= @category.category_name %></h2>
+        <%= render "categories/book_form" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-offset-4">
+    <%= will_paginate @books %>
+  </div>
+</div>

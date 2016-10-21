@@ -1,0 +1,11 @@
+<h2><%= t "book.index.category_title" %></h2>
+<ul class="list-group">
+  <% @categories.each do |category| %>
+    <li class="list-group-item">
+      <span class="tag pull-right">
+        <%= category.books.size %>
+      </span>
+      <%= link_to category.category_name, category_path(category) %>
+    </li>
+  <% end %>
+</ul>
