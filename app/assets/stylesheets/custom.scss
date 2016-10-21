@@ -13,7 +13,6 @@ $gray-medium-light: #eaeaea;
 
 body {
   padding-top: 60px;
-  
   background-repeat: no-repeat;
  }
 
@@ -61,7 +60,6 @@ footer{
   border-top: 1px solid #B00100;
 }
 
-
 /* forms */
 
 input, textarea, select, .uneditable-input {
@@ -74,6 +72,7 @@ input, textarea, select, .uneditable-input {
 input {
   height: auto !important;
 }
+
 #error_explanation {
   color: red;
   ul {
@@ -88,6 +87,7 @@ input {
     color: $state-danger-text;
   }
 }
+
 .checkbox {
   margin-top: -10px;
   margin-bottom: 10px;
@@ -100,4 +100,49 @@ input {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+/* show book */
+.book_image{
+ height: 500px;
+ border: solid 2px #000000;
+  img{
+    border: solid 2px #999999;
+    height: 420px;
+  }
+}
+.index-grid-image{
+  height: 350px;
+  padding: 5px;
+}
+.book_cover_img{
+  height: 340px;
+  width: 210px;
+  border: solid 2px #999999;
+}
+.mark_and_favote{
+  background: wheat;
+}
+.rake{
+  background: yellow;
+}
+.book_cover{
+  background: green ;
+}
+.book_cover_show{
+  height: 450px;
+}
+
+/* review book */
+.review-title{
+  border-bottom: solid 1px #DADADA;
+}
+.review-row{
+  margin: 10px 0px 10px 0px;
+  border-bottom: solid 1px #DADADA;
+  .review-user{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-right: solid 1px #DADADA;
+  }
 }
