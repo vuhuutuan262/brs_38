@@ -13,7 +13,9 @@
   <% @categories.each do |category| %>
     <tr>
       <td> <%= category.id %> </td>
-      <td> <%= category.category_name %> </td>
+      <td>
+        <%= link_to category.category_name,
+          admin_category_books_path(category) %> </td>
       <td>
         <span>
           <%= link_to t("views.admin.category.index.edit_button"),

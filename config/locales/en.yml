@@ -31,11 +31,12 @@ en:
       logout: "Log out"
       profile: "Profile"
       user: "Users"
+      books: "Books and Categories"
       setting: "Setting"
       login: "Log in"
-      user: "Users"
       categories: "Categories"
       requests: "Requests"
+
     footer:
       develop: "Develop: Ha Van Duc - Nguyen Quoc Thong"
       phone_contact: "Phone: 0986338546"
@@ -73,15 +74,35 @@ en:
   users:
     create_user: "Create my account"
     edit:
-        title: "Edit my profile"
-        h2: "Update your profile"
-        save: "Save change"
-        change: "Change"
+      title: "Edit my profile"
+      h2: "Update your profile"
+      save: "Save change"
+      change: "Change"
     new:
-        signup: "Signup"
-        form:
-          confir: "Confirmation"
-          submit: "Create my account"
+      signup: "Signup"
+      form:
+        confir: "Confirmation"
+        submit: "Create my account"
+
+  admin:
+    book:
+      all_book_flash: "Don't have book"
+      id: "ID"
+      title: "Title (* page)"
+      author: "Author"
+      publish_date: "Publish Date"
+      rate: "Rate (* rate)"
+      category: "Category"
+      action: "Action"
+      pages: "pages"
+      rate_2: "rate"
+      dashboard: "Dashboard"
+      select_category: "Select Category"
+      number_page: "Number page: "
+      find_category: "Don't find category"
+      create_book_fail: "Don't create book. Category don't exist"
+
+
   book:
     title: "List Book"
     new:
@@ -104,6 +125,7 @@ en:
     update_success: "Update success"
     create_success: "Create book success"
     destroy_success: "Delete success"
+    destroy_fail: "Delete fail"
 
   share:
     error_form: "The form contains "
@@ -120,12 +142,12 @@ en:
       categories_danger: "Don't find categories"
   controllers:
     flash:
-        destroy_success: "User is deleted"
-        destroy_error: "User is not deleted"
-        category_create: "Category is create"
-        category_update: "Category is update"
-        category_destroy: "Category is destroy"
-        category_error: "Category is not deleted"
+      destroy_success: "User is deleted"
+      destroy_error: "User is not deleted"
+      category_create: "Category is create"
+      category_update: "Category is update"
+      category_destroy: "Category is destroy"
+      category_error: "Category is not deleted"
     admin:
       login:
         flash:
@@ -139,7 +161,7 @@ en:
       create_success: "Requests is create"
       destroy_success: "Requests is deleted"
       destroy_error: "Requests is not deleted"
-  views: 
+  views:
     admin:
       user:
         index:
@@ -174,6 +196,25 @@ en:
           delete_button: "Delete"
           action: "Accep Requests"
           delete_confirm: "Are you sure ?"
+        index:
+          dashboard: "Manage Category"
+          title: "Name_Category"
+          new_button: "New Category"
+          edit_button: "Edit"
+          delete_button: "Delete"
+          admin_function: ""
+          delete_confirm: "Are your sure?"
+          id: "Id_Category"
+          titles: "Manage Categoriy"
+        new:
+          create_category: "Create New Category"
+          create_button: "Add new category"
+          category: "Category"
+          title: "Create Category"
+        edit:
+          update_book: "Update Category"
+          update_button: "Save change"
+          title: "Edit Category"
     requests:
       index:
         dashboard: "Request Book"
@@ -192,3 +233,4 @@ en:
         create_button: "Create request"
       edit:
         submit: "Accep"
+        find_book_fail: "Don't find book"

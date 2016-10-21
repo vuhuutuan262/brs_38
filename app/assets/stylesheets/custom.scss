@@ -117,7 +117,7 @@ input {
 /* show book */
 .book_image{
  height: 500px;
- border: solid 2px #000000;
+ margin-top: 20px;
   img{
     border: solid 2px #999999;
     height: 420px;
@@ -157,4 +157,20 @@ input {
     margin-bottom: 10px;
     border-right: solid 1px #DADADA;
   }
+}
+
+/* admin */
+/* book */
+.table-book{
+  margin-top: 20px;
+  .head-table{
+    background: #000000;
+    color: #fff;
+  }
+}
+.row-button{
+  margin-top: 20px;
+}
+.header{
+  margin-top: 20px;
 }

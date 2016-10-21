@@ -1,0 +1,57 @@
+<div class="row">
+  <h3><%= button %></h3>
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [:admin, @category, @book],
+      html: {class: "form-horizontal", multipart: true} do |f| %>
+
+      <%= render "shared/error_messages", object: f.object %>
+
+      <div class="form-group">
+        <%= f.label :title, class: "control-label col-md-3" %>
+        <div class="col-md-9">
+          <%= f.text_field :title, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :description, class: "control-label col-md-3" %>
+        <div class="col-md-9">
+          <%= f.text_area :description, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :publish_date, class: "control-label col-md-3" %>
+        <div class="col-md-9">
+          <%= f.datetime_select :publish_date, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :number_of_page, class: "control-label col-md-3" %>
+        <div class="col-md-9">
+          <%= f.text_field :number_of_page, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :author, class: "control-label col-md-3" %>
+        <div class="col-md-9">
+          <%= f.text_field :author, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-9">
+            <%= f.file_field :cover %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+          <%= f.submit button, class: "btn btn-success" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

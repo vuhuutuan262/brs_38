@@ -1,0 +1,51 @@
+<% provide :title, t("book.title") %>
+
+<div class="row row-button">
+  <%= link_to t("book.new.create_new_book"),
+    new_admin_category_book_path(@category, @book),
+    class: "btn btn-success" %>
+</div>
+
+<h3 class="col-md-offset-5"><%= @category.category_name %></h3>
+
+<div class="container">
+  <div class="row">
+    <table class="table table-hover table-striped table-book">
+      <thead class="head-table">
+        <tr>
+          <th><%= t "admin.id" %></th>
+          <th><%= t "admin.title" %></th>
+          <th><%= t "admin.author" %></th>
+          <th><%= t "admin.publish_date" %></th>
+          <th><%= t "admin.rate" %></th>
+          <th><%= t "admin.action" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @books.each do |book| %>
+          <tr>
+            <th><%= book.id %></th>
+            <th><%= link_to book.title, admin_category_book_path(@category, book) %>
+              (<%= book.number_of_page.nil? ?
+                Settings.zezo : book.number_of_page %>
+              <%= t "admin.pages" %>)</th>
+            <th><%= book.author %></th>
+            <th><%= book.publish_date %></th>
+            <th>
+              <%= book.avg_rates.nil? ? Settings.zezo : book.avg_rates %>
+              (<%= book.number_rate_of_book.nil? ?
+                Settings.zezo : book.number_rate_of_book %>
+              <%= t "admin.rate_2" %>)</th>
+            <th>
+              <%= link_to t("book.show.edit"), edit_admin_category_book_path(@category, book) %>
+              <%= link_to t("book.show.delete"), admin_category_book_path(@category, book),
+                method: :delete, data: {confirm: t("book.show.confirm")} %>
+            </th>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="col-md-offset-3">
+    </div>
+  </div>
+</div>
