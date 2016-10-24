@@ -33,6 +33,7 @@ en:
       user: "Users"
       setting: "Setting"
       login: "Log in"
+      user: "Users"
     footer:
       develop: "Develop: Ha Van Duc - Nguyen Quoc Thong"
       phone_contact: "Phone: 0986338546"
@@ -115,3 +116,20 @@ en:
     controller:
       flash_danger: "Don't find category"
       categories_danger: "Don't find categories"
+  controllers:
+    flash:
+        destroy_success: "User is deleted"
+        destroy_error: "User is not deleted"
+    admin:
+      login:
+        flash:
+          danger: "Please login as admin"
+  views: 
+    admin:
+      user:
+        index:
+          dashboard: "Manage User"
+          deletebutton: "Delete"
+          deleteconfirm: "Are you sure?"
+          title: "Manage User"
+          id: "ID"
