@@ -12,8 +12,8 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
-  padding-top: 60px;
-  background-repeat: no-repeat;
+  padding-top: 50px;
+  background-color: #C8DEDE;
  }
 
 section {
@@ -32,11 +32,13 @@ section {
 /* typography */
 
 h1{
-  line-height: 1;
+  line-height: 2;
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  color: forestgreen;
+
 }
 #logo{
   float: left;
@@ -48,16 +50,26 @@ h1{
 }
 #logo:hover{
   //Chi chuot
-  color: #000;
+  color: #FFFFFF;
   text-decoration: none;
 }
 
 
 /*  footer*/
 footer{
-  margin-top: 10px;
-  padding-top: 5px;
+  margin-top: 90px;
+  padding-top: 20px;
   border-top: 1px solid #B00100;
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+  
 }
 
 /* forms */

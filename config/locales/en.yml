@@ -27,6 +27,12 @@ en:
       help: "Help"
       about: "About"
       link_categories: "Book Library"
+      account: "Account"
+      logout: "Log out"
+      profile: "Profile"
+      user: "Users"
+      setting: "Setting"
+      login: "Log in"
     footer:
       develop: "Develop: Ha Van Duc - Nguyen Quoc Thong"
       phone_contact: "Phone: 0986338546"
@@ -53,19 +59,26 @@ en:
     login: "Log in"
     remember: "Remember me on this computer"
     new_user: "New user?"
-    account: "Account"
-    logout: "Log out"
-    profile: "Profile"
-
   flash:
     login_success: "Welcome to the Book-Review!"
     find_user_fail: "User not found!"
     errors: "The form contains"
     error: "error"
     login_errors: "Invalid email/password combination"
+    update_success: "Profile updated"
+    logged_in: "Please Login"
   users:
     create_user: "Create my account"
-
+    edit:
+        title: "Edit my profile"
+        h2: "Update your profile"
+        save: "Save change"
+        change: "Change"
+    new:
+        signup: "Signup"
+        form:
+          confir: "Confirmation"
+          submit: "Create my account"
   book:
     title: "List Book"
     new:
