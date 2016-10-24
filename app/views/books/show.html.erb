@@ -1,0 +1,34 @@
+<%= provide :title, t("book.show.title") %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 book_image">
+      <div class="row">
+        <%= link_to "#", class: "btn btn-link col-md-offset-5" do %>
+          <span class="glyphicon glyphicon-bookmark" aria-hidden="true"/>
+        <% end %>
+        <%= link_to "#", class: "btn btn-link" do %>
+          <span class="glyphicon glyphicon-heart" aria-hidden="true"/>
+        <% end %>
+      </div>
+
+      <div class="row">
+        <% if @book.cover? %>
+          <%= image_tag @book.cover.url, class: "center-block" %>
+        <% else %>
+          <%= link_to image_tag("coverdefault.jpg",
+            class: "center-block"), @book %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <h2><%= link_to @book.title, book_path(@book) %></h2>
+
+      <label><%= t "book.show.author" %></label>
+      <%= @book.author %></br>
+
+      <label><%= t "book.show.description" %></label></br>
+      <%= @book.description %>
+    </div>
+  </div>
+</div>
