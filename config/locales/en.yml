@@ -34,6 +34,7 @@ en:
       setting: "Setting"
       login: "Log in"
       user: "Users"
+      categories: "Categories"
     footer:
       develop: "Develop: Ha Van Duc - Nguyen Quoc Thong"
       phone_contact: "Phone: 0986338546"
@@ -120,10 +121,15 @@ en:
     flash:
         destroy_success: "User is deleted"
         destroy_error: "User is not deleted"
+        category_create: "Category is create"
+        category_update: "Category is update"
+        category_destroy: "Category is destroy"
+        category_error: "Category is not deleted"
     admin:
       login:
         flash:
           danger: "Please login as admin"
+
   views: 
     admin:
       user:
@@ -133,3 +139,23 @@ en:
           deleteconfirm: "Are you sure?"
           title: "Manage User"
           id: "ID"
+      category:
+         index:
+           dashboard: "Manage Category"
+           title: "Name_Category"
+           new_button: "New Category"
+           edit_button: "Edit"
+           delete_button: "Delete"
+           admin_function: ""
+           delete_confirm: "Are your sure?"
+           id: "Id_Category"
+           titles: "Manage Categoriy"
+         new:
+           create_category: "Create New Category"
+           create_button: "Add new category"
+           category: "Category"
+           title: "Create Category"
+         edit:
+           update_book: "Update Category"
+           update_button: "Save change"
+           title: "Edit Category"
