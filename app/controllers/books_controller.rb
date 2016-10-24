@@ -2,6 +2,8 @@ class BooksController < ApplicationController
   before_action :find_book, only: :show
 
   def show
+    @reviews = @book.review_rates.desc.paginate page: params[:page],
+      per_page: Settings.per_page
   end
 
   private

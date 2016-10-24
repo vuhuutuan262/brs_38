@@ -121,11 +121,14 @@ ul.users li {
 
 /* forms */
 
-input, textarea, select, .uneditable-input {
+input, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
+}
+textarea.form-control{
+  height: 300px;
 }
 
 input {
@@ -221,4 +224,31 @@ input {
 .header{
   margin-top: 20px;
 }
+/* review */
+.review-row{
+  border-bottom: solid 1px #000000;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
 
+.div-button-create-review{
+  margin-top: 20px;
+  border-top: solid 1px #000000;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.avartar{
+  margin-top: 20px
+}
+/* review */
+.div-review{
+  border-left: solid 1px #000;
+}
+.content-review{
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  height: 100px;
+}
+.div-margin-top{
+  margin-top: 20px;
+}
