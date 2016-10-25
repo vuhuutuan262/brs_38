@@ -35,6 +35,7 @@ en:
       login: "Log in"
       user: "Users"
       categories: "Categories"
+      requests: "Requests"
     footer:
       develop: "Develop: Ha Van Duc - Nguyen Quoc Thong"
       phone_contact: "Phone: 0986338546"
@@ -129,7 +130,10 @@ en:
       login:
         flash:
           danger: "Please login as admin"
-
+    requests:
+      create_success: "Requests is create"
+      destroy_success: "Requests is deleted"
+      destroy_error: "Requests is not deleted"
   views: 
     admin:
       user:
@@ -159,3 +163,17 @@ en:
            update_book: "Update Category"
            update_button: "Save change"
            title: "Edit Category"
+    requests:
+      index:
+        dashboard: "Request Book"
+        id: "Id"
+        book_title: "Book Name"
+        book_author: "Author"
+        content: "Content"
+        cancel_button: "Cancel"
+        delete_confirm: "Are you sure?"
+        new_button: "New request"
+      new:
+        title: "New Requests"
+        create_requests: "Create new request"
+        create_button: "Create request"
