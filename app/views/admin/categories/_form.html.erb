@@ -1,0 +1,8 @@
+<%= form_for [:admin, @category] do |f| %>
+  <%= render partial: "shared/error_messages", locals: {object: @category} %>
+
+  <%= f.label :category_name %>
+  <%= f.text_field :category_name, class: "form-control" %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

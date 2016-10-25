@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   def logged_as_admin
     unless current_user && current_user.is_admin
       flash[:danger] = t "controllers.admin.login.flash.danger"
-      redirect_to login_url
+      redirect_to root_path
     end
   end
 end
