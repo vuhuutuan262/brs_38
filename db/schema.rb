@@ -84,11 +84,12 @@ ActiveRecord::Schema.define(version: 20161017095348) do
   end
 
   create_table "requests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.boolean  "is_approved"
     t.string   "book_name"
+    t.string   "author"
+    t.string   "content"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_requests_on_user_id", using: :btree
   end
 
