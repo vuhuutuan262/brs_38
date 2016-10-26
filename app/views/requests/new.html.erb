@@ -15,6 +15,9 @@
       <%= f.label :content %>
       <%= f.text_area :content, class: "form-control" %>
 
+      <%= f.label :publish_date %>
+      <%= f.date_field :publish_date, class: "form-control" %>
+
       <%= f.submit t("views.requests.new.create_button"), 
         class: "btn btn-primary" %>
     <% end %>

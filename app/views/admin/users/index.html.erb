@@ -1,4 +1,5 @@
 <% provide :title, t("views.admin.user.index.title") %>
+
 <h1><%= t "views.admin.user.index.dashboard" %></h1>
 
 <table class="table table-hover">
@@ -15,8 +16,8 @@
       <td>
         <span>
           <%= link_to t("views.admin.user.index.deletebutton"),
-          admin_user_url(user), method: :delete,
-          data: {confirm: t("views.admin.user.index.deleteconfirm")},
+            admin_user_url(user), method: :delete,
+            data: {confirm: t("views.admin.user.index.deleteconfirm")},
             class:"btn btn-danger" %>
         </span>
       </td>
