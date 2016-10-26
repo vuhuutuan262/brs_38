@@ -49,5 +49,9 @@ class Admin::CategoriesController < ApplicationController
 
   def load_category
     @category = Category.find_by id: params[:id]
+    if @category.nil?
+      redirect_to root_path
+      flash[:danger] = t "admin.book.find_category"
+    end
   end
 end
