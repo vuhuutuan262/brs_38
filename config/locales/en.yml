@@ -130,6 +130,11 @@ en:
       login:
         flash:
           danger: "Please login as admin"
+      requests:
+        not_find: "Cannot find requests"
+        destroy_success: "Requests is deleted"
+        error_destroy: "Requests is not deleted"
+        action_success: "Action is success"
     requests:
       create_success: "Requests is create"
       destroy_success: "Requests is deleted"
@@ -163,6 +168,12 @@ en:
            update_book: "Update Category"
            update_button: "Save change"
            title: "Edit Category"
+      requests:
+        index:
+          title: "Manage Requests"
+          delete_button: "Delete"
+          action: "Accep Requests"
+          delete_confirm: "Are you sure ?"
     requests:
       index:
         dashboard: "Request Book"
@@ -173,7 +184,11 @@ en:
         cancel_button: "Cancel"
         delete_confirm: "Are you sure?"
         new_button: "New request"
+        status: "Status"
+        action: "Action"
       new:
         title: "New Requests"
         create_requests: "Create new request"
         create_button: "Create request"
+      edit:
+        submit: "Accep"

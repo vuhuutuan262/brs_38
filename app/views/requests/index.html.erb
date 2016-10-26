@@ -8,6 +8,8 @@
     <th><%= t "views.requests.index.book_title" %></th>
     <th><%= t "views.requests.index.book_author" %></th>
     <th><%= t "views.requests.index.content" %></th>
+    <th><%= t "views.requests.index.publish_date" %></th>
+    <th><%= t "table.request.status" %></th>
   </tr>
   <% @requests.each do |request| %>
     <tr>
@@ -15,6 +17,8 @@
       <td> <%= request.book_name %> </td>
       <td> <%= request.author %> </td>
       <td> <%= request.content %> </td>
+      <td> <%= request.publish_date %> </td>
+      <th><%= request.status %></th>
       <td>
         <span>
           <%= link_to t("views.requests.index.cancel_button"), request_path(request),

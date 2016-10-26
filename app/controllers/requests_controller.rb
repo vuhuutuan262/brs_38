@@ -32,7 +32,8 @@ class RequestsController < ApplicationController
 
   private
   def request_params
-    params.require(:request).permit :book_name, :author, :content
+    params.require(:request).permit :book_name, :author, :content, 
+      :publish_date
   end
 
   def load_request
