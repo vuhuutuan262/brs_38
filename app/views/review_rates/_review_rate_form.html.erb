@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <%= form_for [@book, @review],
+        html: {class: "form-horizontal"}  do |f| %>
+
+        <%= render "shared/error_messages", object: f.object %>
+
+        <div class="form-group">
+          <%= f.label t "review.controller.rate" %>
+          <%= f.text_field :number_rate_of_user, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :content %>
+          <%= f.text_area :content, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.submit button_name,
+            class: "btn btn-success col-md-2 col-md-offset-5" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

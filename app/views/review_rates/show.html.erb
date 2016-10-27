@@ -1,0 +1,36 @@
+<%= provide :title, t("review.controller.show_title") %>
+<div class="div-margin-top">
+  <%= link_to t("review.controller.back"),
+    book_path(@review.book), class: "btn btn-lg btn-success" %>
+</div>
+<div class="container">
+  <div class="row col-md-offset-5">
+    <h3><%= t "review.controller.show_title" %></h3>
+    <%= gravatar_for @review.user %>
+    <div class="div-margin-top">
+      <%= link_to @review.user.name, user_path(@review.user) %>
+    </div>
+  </div>
+  <div class="row content-review">
+    <div class="col-md-8 col-md-offset-2">
+      <strong>
+        <%= t "review.controller.rate" %>
+        <% (Settings.one..@review.number_rate_of_user).each do %>
+          <%= image_tag Settings.url_star_full,
+            alt: t("review.controller.alt_logo") %>
+        <% end %>
+
+        <% if @review.number_rate_of_user < Settings.max_rate %>
+          <% (Settings.one..(Settings.max_rate - @review.number_rate_of_user)).each do %>
+            <%= image_tag Settings.url_star_empty,
+              alt: t("review.controller.alt_logo") %>
+          <% end %>
+        <% end %>
+      </strong>
+      <div>
+        <h5><strong><%= t "review.controller.content_review" %></strong></h5>
+        <p><%= @review.content %></p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<% provide :title, t("review.controller.review") %>
+<div class="div-margin-top">
+  <%= link_to t("review.controller.back"),
+    book_path(@book), class: "btn btn-lg btn-success" %>
+</div>
+<%= render "review_rate_form",
+  button_name: t("review.controller.create_review") %>

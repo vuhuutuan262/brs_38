@@ -2,6 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 book_image">
+
       <div class="row">
         <%= link_to "#", class: "btn btn-link col-md-offset-5" do %>
           <span class="glyphicon glyphicon-bookmark" aria-hidden="true"/>
@@ -15,20 +16,32 @@
         <% if @book.cover? %>
           <%= image_tag @book.cover.url, class: "center-block" %>
         <% else %>
-          <%= link_to image_tag("coverdefault.jpg",
+          <%= link_to image_tag(Settings.url_cover_book,
             class: "center-block"), @book %>
         <% end %>
       </div>
+
+      <div class="col-md-offset-4">
+        <%= t "admin.book.number_page" %>
+        <%= @book.number_of_page %>
+      </div>
+
     </div>
-
     <div class="col-md-8">
-      <h2><%= link_to @book.title, book_path(@book) %></h2>
-
+      <h2><%= @book.title %></h2>
       <label><%= t "book.show.author" %></label>
-      <%= @book.author %></br>
-
-      <label><%= t "book.show.description" %></label></br>
+      <p><%= @book.author %></p>
+      <label><%= t "book.show.description" %></label>
       <%= @book.description %>
     </div>
   </div>
+  <div class="row div-button-create-review">
+    <div class="cold-md-3 col-md-offset-5">
+      <%= link_to t("review.controller.create_review"),
+        new_book_review_rate_path(@book),
+        class: "btn btn-lg btn-success" %>
+    </div>
+  </div>
+
+  <%= render "books/reviews_form" %>
 </div>
