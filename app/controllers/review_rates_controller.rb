@@ -19,6 +19,7 @@ class ReviewRatesController < ApplicationController
   end
 
   def show
+    @comment = current_user.comments.build
   end
 
   def edit

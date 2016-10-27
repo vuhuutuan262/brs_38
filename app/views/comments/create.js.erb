@@ -1,0 +1,4 @@
+$('.ajax-form-create').html('<%= j render "comments/comment_form",
+  button_name: t("review.comment.comment") %>');
+$('.div-create').html('<%= j render "review_rates/comments",
+  comments: @review.comments.desc %>').appendTo('.div-create');

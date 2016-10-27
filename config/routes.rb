@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   resources :books, only: [:index, :show] do
     resources :review_rates, except: :index
   end
+  resources :review_rates, except: :index do
+    resources :comments, except: [:index, :show]
+  end
   resources :users
   resources :categories, only: [:index, :show]
   resources :requests, except: [:show, :edit, :update]
