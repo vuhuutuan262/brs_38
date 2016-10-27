@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   resources :books, only: [:index, :show]
   resources :categories, only: [:index, :show]
   resources :requests, except: [:show, :edit, :update]
+  resources :relationships, only: [:create, :destroy, :index]
 end

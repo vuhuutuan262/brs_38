@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, except: [:new, :show, :create]
+  before_action :logged_in_user, except: [:new, :create]
   before_action :find_user, except: [:index, :new, :create]
   before_action :valid_user, only: [:edit, :update]
   
@@ -19,6 +19,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    @relationship = if current_user.following? @user
+      current_user.active_relationships.find_by followed_id: @user.id
+    else
+      current_user.active_relationships.build
+    end
   end
   
   def edit
