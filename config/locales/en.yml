@@ -234,3 +234,14 @@ en:
       edit:
         submit: "Accep"
         find_book_fail: "Don't find book"
+    shared:
+      stats:
+        follow: "Follow"
+        unfollow: "Unfollow"
+        viewprofile: "view my profile"
+        title:
+          following: "Following"
+          followers: "Followers"
+    users:
+      submit_follow: "Follow"
+      submit_unfollow: "Unfollow"
