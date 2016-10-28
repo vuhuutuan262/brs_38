@@ -10,4 +10,9 @@ class ReviewRate < ApplicationRecord
   validates :book, presence: true
 
   scope :desc, ->{order created_at: :DESC}
+
+  def self.avg_rate book_id
+    ReviewRate.where("book_id = ?", book_id).
+      group(:book_id).average(:number_rate_of_user)
+  end
 end
