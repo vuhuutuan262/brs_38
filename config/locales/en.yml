@@ -305,3 +305,6 @@ en:
     top_book_rate: "Top 10 best rate book"
     rate: "Average rate"
     author: "Author"
+  like_activity:
+    like: "Like"
+    unlike: "Unlike"
