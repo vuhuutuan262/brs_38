@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
   def show
+    @activities = Activity.desc.take Settings.take_book
+    @books = Book.order_desc_rate.take Settings.take_book
     if valid_page?
       render template: "pages/#{params[:page]}"
     else

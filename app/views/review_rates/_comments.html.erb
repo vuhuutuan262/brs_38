@@ -10,6 +10,14 @@
     <div class="col-md-offset-1">
       <%= comment.content %>
     </div>
+    <div class="row col-md-offset-1">
+      <h5>
+        <i>
+          <%= time_ago_in_words comment.created_at %>
+          <%= t "activity.ago" %>
+        </i>
+      </h5>
+    </div>
 
     <% if logged_in? %>
       <% if current_user.current_user? comment.user %>

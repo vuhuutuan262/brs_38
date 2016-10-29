@@ -1,8 +1,75 @@
-<% provide :title, t("pages.home.title_page") %>
-<div class="center jumbotron">
-  <h1><%= t "pages.home.title" %></h1>
-  <%= link_to image_tag("logo.png", alt: t("pages.home.logo_app")),
-    "/pages/home" %><br/>
-  <%= link_to t("sessions.label_signup"), signup_path,
-    class: "btn btn-lg btn-primary" %>
+<div class="container">
+  <div class="row">
+    <% if logged_in? %>
+      <div class="col-md-6">
+        <div class="row">
+          <h1><%= t "activity.top_book_rate" %></h1>
+        </div>
+        <table class="table table-hover table-striped table-book">
+          <thead class="head-table">
+            <tr>
+              <th><%= t "book.title" %></th>
+              <th><%= t "activity.author" %></th>
+              <th><%= t "activity.rate" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @books.each do |book| %>
+              <tr>
+                <th><%= link_to book.title, book %>
+                <th><%= book.author %></th>
+                <th><%= book.avg_rates %></th>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-5 col-md-offset-1">
+        <div class="row">
+          <h1><%= t "activity.title" %></h1>
+        </div>
+        <div class="row">
+          <% @activities.each do |activity| %>
+            <div class="row">
+              <h4 class="div-activity text-center">
+                <%= link_to activity.user.name, activity.user %>
+                <%= activity.content %>
+                <% if activity.follow? %>
+                  <%= link_to activity.target_activity.name,
+                    activity.target_activity %>
+                <% elsif activity.comment? %>
+                  <%= link_to t("activity.review_title"),
+                    book_review_rate_path(activity.target_activity.book,
+                    activity.target_activity) %>
+                  <%= t("activity.in") %>
+                  <%= link_to activity.target_activity.book.title,
+                    activity.target_activity.book %>
+                <% else %>
+                  <%= link_to activity.target_activity.title,
+                    activity.target_activity %>
+                <% end %>
+                <div class="row">
+                  <h5>
+                    <i>
+                      <%= time_ago_in_words activity.created_at %>
+                      <%= t "activity.ago" %>
+                    </i>
+                  </h5>
+                </div>
+              </h4>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+      <% provide :title, t("pages.home.title_page") %>
+      <div class="center jumbotron">
+        <h1><%= t "pages.home.title" %></h1>
+        <%= link_to image_tag("logo.png", alt: t("pages.home.logo_app")),
+          root_path %><br/>
+        <%= link_to t("sessions.label_signup"), signup_path,
+          class: "btn btn-lg btn-primary" %>
+      </div>
+    <% end %>
+  </div>
 </div>

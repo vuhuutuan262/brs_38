@@ -4,7 +4,7 @@ class RelationshipsController < ApplicationController
   def index
     @user = User.find_by id: params[:user_id]
     if @user.nil?
-      flash[:danger] = t :user_fails
+      flash[:danger] = t "flash.find_user_fail"
       redirect_to root_path
     else
       relationship = params[:relationship]
