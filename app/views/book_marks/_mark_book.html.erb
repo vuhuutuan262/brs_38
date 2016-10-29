@@ -1,0 +1,12 @@
+<% if @marked_book && @marked_book.mark_type.present? %>
+  <h4>
+    <%= t "user_book.marked" %>
+    <%= @marked_book.mark_type %>
+  </h4>
+  <div id="edit-mark">
+    <%= link_to t("user_book.change"),
+      edit_book_book_mark_path(@book, @marked_book), remote: true %>
+  </div>
+<% else %>
+  <%= render "book_marks/mark_form" %>
+<% end %>
