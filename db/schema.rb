@@ -35,15 +35,15 @@ ActiveRecord::Schema.define(version: 20161017095348) do
   create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
     t.datetime "publish_date"
-    t.integer  "number_of_page"
+    t.integer  "number_of_page",      default: 1
     t.string   "author"
     t.string   "cover"
     t.string   "description"
-    t.integer  "number_rate_of_book"
-    t.float    "avg_rates",           limit: 24
+    t.integer  "number_rate_of_book", default: 0
+    t.integer  "avg_rates",           default: 0
     t.integer  "category_id"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.index ["category_id"], name: "index_books_on_category_id", using: :btree
   end
 
@@ -97,11 +97,11 @@ ActiveRecord::Schema.define(version: 20161017095348) do
 
   create_table "review_rates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "content",             limit: 4294967295
-    t.integer  "number_rate_of_user"
+    t.integer  "number_rate_of_user",                    default: 0
     t.integer  "user_id"
     t.integer  "book_id"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
     t.index ["book_id"], name: "index_review_rates_on_book_id", using: :btree
     t.index ["user_id"], name: "index_review_rates_on_user_id", using: :btree
   end

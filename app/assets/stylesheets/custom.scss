@@ -13,7 +13,7 @@ $gray-medium-light: #eaeaea;
 
 body {
   padding-top: 50px;
-  background-color: #C8DEDE;
+  background-color: darkseagreen;
  }
 
 section {
@@ -50,7 +50,7 @@ h1{
 }
 #logo:hover{
   //Chi chuot
-  color: #FFFFFF;
+  color: #000;
   text-decoration: none;
 }
 
@@ -167,10 +167,11 @@ input {
 .book_image{
  height: 500px;
  margin-top: 20px;
-  img{
+  .cover-book{
     border: solid 2px #999999;
     height: 420px;
   }
+
 }
 .index-grid-image{
   height: 350px;
@@ -278,4 +279,8 @@ input {
   border-top: solid 1px #000;
   margin-top: 20px;
   padding-top: 20px;
+}
+/* search */
+.search_form{
+  margin-top: 5px;
 }

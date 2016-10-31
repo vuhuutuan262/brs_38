@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     resources :comments, except: [:index, :show]
   end
   resources :users
-  resources :categories, only: [:index, :show]
+  resources :categories, only: :show
   resources :requests, except: [:show, :edit, :update]
   resources :relationships, only: [:create, :destroy, :index]
 end

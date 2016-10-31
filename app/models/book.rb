@@ -15,4 +15,16 @@ class Book < ApplicationRecord
 
   scope :order_desc, -> {order created_at: :DESC}
   scope :publish_date_order_desc, ->{order publish_date: :DESC}
+
+  def self.search search
+    if search
+      where(["title LIKE ? or
+        number_rate_of_book LIKE ? or
+        author LIKE ? or
+        number_of_page = ? or avg_rates = ?",
+        "%#{search}%", "%#{search}%", "%#{search}%", search, search])
+    else
+      all
+    end
+  end
 end

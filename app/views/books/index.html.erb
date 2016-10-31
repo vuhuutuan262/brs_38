@@ -1,14 +1,15 @@
 <% provide :title, t("categories.index.title_page") %>
 <div class="container">
   <div class="row">
-
+  </div>
+  <div class="row">
     <div class="col-md-3">
       <%= render "categories/category_form" %>
     </div>
 
     <div class="col-md-9">
       <% if @books.nil? %>
-        <h2><%= t "categories.show.book_nill" %></h2>
+        <h2><%= t "categories.show.book_nil" %></h2>
       <% else %>
         <h2>
           <%= t "book.index.all_books" %>

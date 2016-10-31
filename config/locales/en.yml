@@ -136,7 +136,7 @@ en:
     index:
       title_page: "Categories"
     show:
-      book_nill: "Don't have book in category"
+      book_nil: "Don't have book in category"
     controller:
       flash_danger: "Don't find category"
       categories_danger: "Don't find categories"
@@ -284,3 +284,7 @@ en:
       find_comment: "Don't find comment"
       rep: "Reply"
       edit_comment: "Edit comment"
+  search:
+    place_search: "Search with title, author, number page or rate book"
+    search: "Search"
+

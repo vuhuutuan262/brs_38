@@ -11,6 +11,7 @@ class ReviewRatesController < ApplicationController
     @review = current_user.review_rates.build review_params
     @review.book_id = @book.id
     if @review.save
+      avg_rate
       redirect_to book_path @book
       flash[:success] = t "review.controller.flash_success"
     else
@@ -27,11 +28,13 @@ class ReviewRatesController < ApplicationController
 
   def update
     if @review.update_attributes review_params
+      avg_rate
       flash[:success] = t "book_controller.update_success"
       redirect_to book_path @book
     else
       render :edit
     end
+
   end
 
   def destroy
@@ -45,7 +48,8 @@ class ReviewRatesController < ApplicationController
 
   private
   def review_params
-    params.require(:review_rate).permit :content, :number_rate_of_user, :book_id
+    params.require(:review_rate).
+      permit :content, :number_rate_of_user, :book_id
   end
 
   def find_book
@@ -61,6 +65,15 @@ class ReviewRatesController < ApplicationController
     if @review.nil?
       redirect_to book_path @book
       flash[:danger] = t "review.controller.find_review_fail"
+    end
+  end
+
+  def avg_rate
+    if @book.present?
+      avg = ReviewRate.avg_rate @book.id
+      @book.update_attributes avg_rates: avg[@book.id].to_i
+    else
+      redirect_to book_path @book
     end
   end
 end
