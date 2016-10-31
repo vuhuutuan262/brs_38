@@ -87,7 +87,7 @@ en:
   admin:
     book:
       all_book_flash: "Don't have book"
-      id: "ID"
+      id: "Book ID"
       title: "Title (* page)"
       author: "Author"
       publish_date: "Publish Date"
@@ -169,7 +169,7 @@ en:
           deletebutton: "Delete"
           deleteconfirm: "Are you sure?"
           title: "Manage User"
-          id: "ID"
+          id: "User ID"
       category:
          index:
            dashboard: "Manage Category"
@@ -218,7 +218,7 @@ en:
     requests:
       index:
         dashboard: "Request Book"
-        id: "Id"
+        id: "Request ID"
         book_title: "Book Name"
         book_author: "Author"
         content: "Content"
@@ -287,4 +287,21 @@ en:
   search:
     place_search: "Search with title, author, number page or rate book"
     search: "Search"
-
+  activity:
+    review_timeline: "just review in book"
+    follow_timeline: "just follow"
+    read_timeline: "just mark read"
+    favorite_timeline: "just mark favorite"
+    comment_timeline: "just comment a"
+    review_title: "Review"
+    in: "in"
+    ago: "ago"
+    follow: "follow"
+    review: "review"
+    comment: "comment"
+    read: "read"
+    favorite: "favorite"
+    title: "Activities Feed"
+    top_book_rate: "Top 10 best rate book"
+    rate: "Average rate"
+    author: "Author"

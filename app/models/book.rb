@@ -13,8 +13,9 @@ class Book < ApplicationRecord
   validates :description, presence: true, length: {maximum: 200}
   validates :category, presence: true
 
-  scope :order_desc, -> {order created_at: :DESC}
-  scope :publish_date_order_desc, ->{order publish_date: :DESC}
+  scope :order_desc, -> {order created_at: :desc}
+  scope :order_desc_rate, -> {order avg_rates: :desc}
+  scope :publish_date_order_desc, ->{order publish_date: :desc}
 
   def self.search search
     if search
