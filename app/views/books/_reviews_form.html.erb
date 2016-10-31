@@ -46,18 +46,22 @@
         <% end %>
       </div>
 
-      <% if logged_in? %>
-        <%= link_to t("review.controller.like"), "#", class: "btn btn-link" %>
-        <% if review.user == current_user %>
-          <%= link_to t("review.controller.edit"),
-            edit_book_review_rate_path(review.book, review),
-            class: "btn btn-link" %>
-          <%= link_to t("review.controller.delete"),
-            book_review_rate_path(review.book, review), method: :delete,
-            data: {confirm: t("review.controller.data_confirm")},
-            class: "btn btn-link" %>
+      <div class="row col-md-10">
+        <% if logged_in? %>
+          <%= link_to t("review.controller.like"), "#", class: "btn btn-link" %>
+          <%= link_to t("review.comment.rep"),
+            book_review_rate_path(@book, review) %>
+          <% if current_user.current_user? review.user %>
+            <%= link_to t("review.controller.edit"),
+              edit_book_review_rate_path(review.book, review),
+              class: "btn btn-link" %>
+            <%= link_to t("review.controller.delete"),
+              book_review_rate_path(review.book, review), method: :delete,
+              data: {confirm: t("review.controller.data_confirm")},
+              class: "btn btn-link" %>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
 <% end %>

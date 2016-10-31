@@ -117,8 +117,6 @@ ul.users li {
   margin: 5px 0;
 }
 
-
-
 /* forms */
 
 input, select, .uneditable-input {
@@ -127,6 +125,7 @@ input, select, .uneditable-input {
   margin-bottom: 15px;
   @include box_sizing;
 }
+
 textarea.form-control{
   height: 300px;
 }
@@ -244,6 +243,20 @@ input {
 .div-review{
   border-left: solid 1px #000;
 }
+.div-margin-top{
+  margin-top: 20px;
+}
+.review-row{
+  border-bottom: solid 1px #000000;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.div-button-create-review{
+  margin-top: 20px;
+  border-top: solid 1px #000000;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 .content-review{
   word-wrap: break-word;
   text-overflow: ellipsis;
@@ -251,4 +264,18 @@ input {
 }
 .div-margin-top{
   margin-top: 20px;
+  overflow: hidden;
+}
+.div-comment{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: dashed 1px #000;
+}
+.div-create{
+  margin-top: 20px;
+}
+.ajax-form-create{
+  border-top: solid 1px #000;
+  margin-top: 20px;
+  padding-top: 20px;
 }

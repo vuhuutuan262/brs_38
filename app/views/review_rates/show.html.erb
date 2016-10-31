@@ -31,6 +31,17 @@
         <h5><strong><%= t "review.controller.content_review" %></strong></h5>
         <p><%= @review.content %></p>
       </div>
+
+      <% if logged_in? %>
+        <div class="row col-md-11 col-md-offset-1 ajax-form-create">
+          <%= render "comments/comment_form",
+            button_name: t("review.comment.comment") %>
+          </div>
+      <% end %>
+
+      <div class="row div-create col-md-11 col-md-offset-1">
+        <%= render "review_rates/comments", comments: @review.comments.desc %>
+      </div>
     </div>
   </div>
 </div>
