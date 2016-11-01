@@ -29,4 +29,5 @@ Rails.application.routes.draw do
   resources :activities, only: :index do
     resources :like_activities, only: [:create, :destroy]
   end
+  resources :dashboards, only: :index
 end

@@ -1,7 +1,12 @@
 <header class="navbar navbar-default navbar-fixed-top">
   <div class="container">
-    <%= link_to t("layout.header.logo"), "/pages/home", id: "logo" %>
-    <%= render "layouts/search_form" if logged_in? %>
+
+    <% if logged_in? && current_user.is_admin? %>
+      <%= link_to t("layout.header.logo"), dashboards_path, id: "logo" %>
+    <% else %>
+      <%= link_to t("layout.header.logo"), "/pages/home", id: "logo" %>
+      <%= render "layouts/search_form" if logged_in? %>
+  <% end %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>

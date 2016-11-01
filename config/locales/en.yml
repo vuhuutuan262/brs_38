@@ -325,3 +325,7 @@ en:
       read: "Read"
       unread: "Unread"
     oneline: " A user is liked only once"
+  dashboard:
+    toprequest: "Top 10 newest request"
+    topuser: "Top 10 newest register user"
+    requestempty: "Request empty"

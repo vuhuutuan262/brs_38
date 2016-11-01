@@ -6,4 +6,6 @@ class Request < ApplicationRecord
   validates :content, presence: true, length: {maximum: 60}
   validates :publish_date, presence: true
   enum status: [:waiting, :accept, :deny]
+
+  scope :desc_created, -> {order created_at: :desc}
 end
