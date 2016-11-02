@@ -294,7 +294,7 @@ en:
   activity:
     review_timeline: "just review in book"
     follow_timeline: "just follow"
-    read_timeline: "just mark read"
+    read_timeline: "just mark"
     favorite_timeline: "just mark favorite"
     comment_timeline: "just comment a"
     review_title: "Review"
