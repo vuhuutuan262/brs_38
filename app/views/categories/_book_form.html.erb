@@ -6,9 +6,12 @@
           <%= link_to image_tag(book.cover.url,
             class: "book_cover_img center-block"), book_path(book) %>
         <% else %>
-          <%= link_to image_tag("coverdefault.jpg",
+          <%= link_to image_tag(Settings.url_cover_book,
             class: "book_cover_img center-block"), book %>
         <% end %>
+        <div class="row text-center">
+          <%= link_to book.title, book %>
+        </div>
       </div>
     <% end %>
   </div>

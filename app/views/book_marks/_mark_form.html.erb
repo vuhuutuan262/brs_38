@@ -1,9 +1,8 @@
-<%= form_for [@book, @user_book] do |f| %>
+<%= form_for [@book, @user_book], html: {class: "form-horizontal"} do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :book_id %>
-
-  <%= f.submit t("book.show.button_mark"), class: "btn btn-warning" %>
-  <span>
-    <%= f.select :mark_type, options_for_select(@mark_books) %>
-  </span>
+  <%= f.select :mark_type, options_for_select(@mark_books), {},
+    class: "form-control" %>
+  <%= f.submit t("book.show.button_mark"),
+    class: "btn btn-success col-md-3 col-md-offset-4" %>
 <% end %>
