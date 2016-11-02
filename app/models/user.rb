@@ -62,4 +62,8 @@ class User < ApplicationRecord
   def following? other_user
     following.include? other_user
   end
+
+  def liked? activity
+    like_activities.find_by activity_id: activity.id
+  end
 end

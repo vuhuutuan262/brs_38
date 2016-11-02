@@ -56,6 +56,9 @@
                     </i>
                   </h5>
                 </div>
+                <div class="row div-like-activity-<%= activity.id.to_s %>">
+                  <%= render "like_activities/likeactivity", activity: activity %>
+                </div>
               </h4>
             </div>
           <% end %>

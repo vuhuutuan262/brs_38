@@ -1,0 +1,12 @@
+<% if current_user.liked? activity %>
+  <%= form_for [activity, create_like(activity)],
+    html: {method: :delete}, remote: true do |f| %>
+    <%= render "like_activities/content_form",
+      activity: activity, icon_button: "down" %>
+  <% end %>
+<% else %>
+  <%= form_for [activity, create_like(activity)], remote: true do |f| %>
+    <%= render "like_activities/content_form",
+      activity: activity, icon_button: "up" %>
+  <% end %>
+<% end %>

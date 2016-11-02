@@ -64,7 +64,6 @@ ActiveRecord::Schema.define(version: 20161017095348) do
   end
 
   create_table "like_activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.boolean  "is_like"
     t.integer  "user_id"
     t.integer  "activity_id"
     t.datetime "created_at",  null: false

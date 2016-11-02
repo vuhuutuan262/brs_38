@@ -1,5 +1,6 @@
 class Activity < ApplicationRecord
   belongs_to :user
+  has_many :like_activities
 
   enum activity_type: [:review, :comment, :follow, :read, :favorite]
 
