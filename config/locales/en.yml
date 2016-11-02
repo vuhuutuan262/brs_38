@@ -120,6 +120,7 @@ en:
       confirm: "You sure delete this book?"
       author: "Author: "
       description: "Description: "
+      button_mark: "Mark"
   book_controller:
     book_blank: "Don't find book"
     update_success: "Update success"
@@ -308,3 +309,14 @@ en:
   like_activity:
     like: "Like"
     unlike: "Unlike"
+  user_book:
+    marked: "Book is "
+    create:
+      success: "You marked this book success"
+      update: "Update mark success."
+      not_success: "You not mark"
+    change: "Change"
+    mark:
+      reading: "Reading"
+      read: "Read"
+      unread: "Unread"

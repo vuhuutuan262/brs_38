@@ -2,6 +2,7 @@ class BooksController < ApplicationController
   before_action :logged_in_user
   before_action :find_book, only: :show
   before_action :load_categories, only: :index
+  before_action :mark_book, only: :show
 
   def index
     @books = Book.search(params[:search]).
@@ -12,6 +13,8 @@ class BooksController < ApplicationController
   def show
     @reviews = @book.review_rates.desc.paginate page: params[:page],
       per_page: Settings.per_page
+    @marked_book = @book.book_marks.find_by user_id: current_user.id
+    @user_book = @book.book_marks.build
   end
 
   private
@@ -28,5 +31,10 @@ class BooksController < ApplicationController
     if @categories.blank?
       flash[:danger] = t "categories.controller."
     end
+  end
+
+  def mark_book
+    @mark_books = BookMark.mark_types.
+      map {|key, value| [t("user_book.mark.#{key}"), key]}
   end
 end

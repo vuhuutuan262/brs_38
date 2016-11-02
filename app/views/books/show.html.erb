@@ -21,9 +21,8 @@
         <% end %>
       </div>
 
-      <div class="col-md-offset-4">
-        <%= t "admin.book.number_page" %>
-        <%= @book.number_of_page %>
+      <div class="col-md-offset-2">
+        <%= render "book_marks/mark_book" %>
       </div>
 
       <div class="img-star col-md-offset-2">
@@ -49,6 +48,8 @@
       <p><%= @book.author %></p>
       <label><%= t "book.show.description" %></label>
       <%= @book.description %>
+      <%= t "admin.book.number_page" %>
+        <%= @book.number_of_page %>
     </div>
   </div>
   <div class="row div-button-create-review">

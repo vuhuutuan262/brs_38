@@ -1,0 +1,9 @@
+<%= form_for [@book, @user_book] do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :book_id %>
+
+  <%= f.submit t("book.show.button_mark"), class: "btn btn-warning" %>
+  <span>
+    <%= f.select :mark_type, options_for_select(@mark_books) %>
+  </span>
+<% end %>
