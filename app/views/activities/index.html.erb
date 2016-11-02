@@ -1,0 +1,41 @@
+<div class="container">
+  <h3 class="col-md-offset-5"><%= t "activity.activities" %></h3>
+  <div class="row">
+    <% @activities.each do |activity| %>
+      <div class="row">
+        <h4 class="div-activity text-center">
+          <%= link_to activity.user.name, activity.user %>
+          <%= activity.content %>
+          <% if activity.follow? %>
+            <%= link_to activity.target_activity.name,
+              activity.target_activity %>
+          <% elsif activity.comment? %>
+            <%= link_to t("activity.review_title"),
+              book_review_rate_path(activity.target_activity.book,
+              activity.target_activity) %>
+            <%= t("activity.in") %>
+            <%= link_to activity.target_activity.book.title,
+              activity.target_activity.book %>
+          <% else %>
+            <%= link_to activity.target_activity.title,
+              activity.target_activity %>
+          <% end %>
+          <div class="row">
+            <h5>
+              <i>
+                <%= time_ago_in_words activity.created_at %>
+                <%= t "activity.ago" %>
+              </i>
+            </h5>
+          </div>
+          <div class="row div-like-activity-<%= activity.id.to_s %>">
+            <%= render "like_activities/likeactivity", activity: activity %>
+          </div>
+        </h4>
+      </div>
+    <% end %>
+  </div>
+  <div class="row col-md-9 col-md-offset-5">
+    <%= will_paginate @activities %>
+  </div>
+</div>

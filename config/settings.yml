@@ -6,6 +6,7 @@ one: 1
 max_rate: 5
 size_avatar: 20
 take_book: 10
+take_activity: 5
 url_cover_book: "http://imageshack.com/a/img924/595/dt80hr.jpg"
 url_star_full: "http://imageshack.com/a/img924/5595/nRbz7O.png"
 url_star_empty: "http://imageshack.com/a/img922/8343/wvVhbV.png"

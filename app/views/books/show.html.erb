@@ -2,16 +2,6 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 book_image">
-
-      <div class="row">
-        <%= link_to "#", class: "btn btn-link col-md-offset-5" do %>
-          <span class="glyphicon glyphicon-bookmark" aria-hidden="true"/>
-        <% end %>
-        <%= link_to "#", class: "btn btn-link" do %>
-          <span class="glyphicon glyphicon-heart" aria-hidden="true"/>
-        <% end %>
-      </div>
-
       <div class="row">
         <% if @book.cover? %>
           <%= image_tag @book.cover.url, class: "center-block cover-book" %>
@@ -21,7 +11,7 @@
         <% end %>
       </div>
 
-      <div class="col-md-offset-2">
+      <div class="col-md-offset-2 div-margin-top">
         <%= render "book_marks/mark_book" %>
       </div>
 

@@ -1,9 +1,9 @@
 class LikeActivitiesController < ApplicationController
   before_action :logged_in_user
   before_action :find_activity, only: [:create, :destroy]
+  before_action :find_like, only: [:create]
 
   def create
-    @like = current_user.like_activities.build activity_id: params[:activity_id]
     if @like.save
       respond_to do |format|
         format.html {redirect_to root_path}
@@ -36,6 +36,16 @@ class LikeActivitiesController < ApplicationController
     @activity = Activity.find_by id: params[:activity_id]
     if @activity.nil?
       redirect_to root_path
+    end
+  end
+
+  def find_like
+    @like = current_user.like_activities.find_by activity_id: params[:activity_id]
+    if @like
+      redirect_to activities_path
+      flash[:danger] = t "like_activity.oneline"
+    else
+      @like = current_user.like_activities.build activity_id: params[:activity_id]
     end
   end
 end

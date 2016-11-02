@@ -11,6 +11,7 @@
               admin_categories_path %></li>
             <li><%= link_to t("layout.header.requests"), admin_requests_path %></li>
           <% else %>
+            <li><%= link_to t("activity.activities"), activities_path %></li>
             <li><%= link_to t("layout.header.link_categories"),
               books_path %></li>
             <li><%= link_to t("layout.header.requests"), requests_path %></li>

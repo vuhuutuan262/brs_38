@@ -171,6 +171,9 @@ en:
           deleteconfirm: "Are you sure?"
           title: "Manage User"
           id: "User ID"
+          name: "Name user"
+          email: "Email user"
+
       category:
          index:
            dashboard: "Manage Category"
@@ -306,6 +309,7 @@ en:
     top_book_rate: "Top 10 best rate book"
     rate: "Average rate"
     author: "Author"
+    activities: "All Activities"
   like_activity:
     like: "Like"
     unlike: "Unlike"
@@ -320,3 +324,4 @@ en:
       reading: "Reading"
       read: "Read"
       unread: "Unread"
+    oneline: " A user is liked only once"
