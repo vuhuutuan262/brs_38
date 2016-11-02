@@ -30,7 +30,7 @@ class Admin::BooksController < ApplicationController
   def update
     if @book.update_attributes book_params
       redirect_to admin_category_books_path @category
-      flash[:success] = t "book_controller.create_success"
+      flash[:success] = t "book_controller.update_success"
     else
       render :edit
     end
@@ -63,7 +63,7 @@ class Admin::BooksController < ApplicationController
     @book = Book.find_by id: params[:id]
     if @book.nil?
       redirect_to admin_categories_path
-      flash[:danger] = t "views.requests.new.find_book_fail"
+      flash[:danger] = t "views.requests.edit.find_book_fail"
     end
   end
 end

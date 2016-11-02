@@ -3,7 +3,7 @@ class Admin::UsersController < ApplicationController
   before_action :find_user, only: :destroy
 
   def index
-    @users = User.paginate page: params[:page]
+    @users = User.all_user_not_admin.paginate page: params[:page]
   end
 
   def destroy

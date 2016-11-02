@@ -13,12 +13,12 @@
     <table class="table table-hover table-striped table-book">
       <thead class="head-table">
         <tr>
-          <th><%= t "admin.id" %></th>
-          <th><%= t "admin.title" %></th>
-          <th><%= t "admin.author" %></th>
-          <th><%= t "admin.publish_date" %></th>
-          <th><%= t "admin.rate" %></th>
-          <th><%= t "admin.action" %></th>
+          <th><%= t "admin.book.id" %></th>
+          <th><%= t "admin.book.title" %></th>
+          <th><%= t "admin.book.author" %></th>
+          <th><%= t "admin.book.publish_date" %></th>
+          <th><%= t "admin.book.rate" %></th>
+          <th><%= t "admin.book.action" %></th>
         </tr>
       </thead>
       <tbody>
@@ -28,14 +28,14 @@
             <th><%= link_to book.title, admin_category_book_path(@category, book) %>
               (<%= book.number_of_page.nil? ?
                 Settings.zezo : book.number_of_page %>
-              <%= t "admin.pages" %>)</th>
+              <%= t "admin.book.pages" %>)</th>
             <th><%= book.author %></th>
             <th><%= book.publish_date %></th>
             <th>
               <%= book.avg_rates.nil? ? Settings.zezo : book.avg_rates %>
               (<%= book.number_rate_of_book.nil? ?
                 Settings.zezo : book.number_rate_of_book %>
-              <%= t "admin.rate_2" %>)</th>
+              <%= t "admin.book.rate_2" %>)</th>
             <th>
               <%= link_to t("book.show.edit"), edit_admin_category_book_path(@category, book) %>
               <%= link_to t("book.show.delete"), admin_category_book_path(@category, book),

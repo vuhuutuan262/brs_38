@@ -18,18 +18,39 @@
           <%= t "admin.book.number_page" %>
           <%= @book.number_of_page %>
         </div>
+        <div class="img-star col-md-offset-2">
+          <strong>
+            <%= t "review.controller.rate" %>
+            <% (Settings.one..@book.avg_rates).each do %>
+              <%= image_tag Settings.url_star_full,
+                alt: t("review.controller.alt_logo") %>
+            <% end %>
+            <% if @book.avg_rates < Settings.max_rate %>
+              <% (Settings.one..(Settings.max_rate - @book.avg_rates)).each do %>
+                <%= image_tag Settings.url_star_empty,
+                  alt: t("review.controller.alt_logo") %>
+              <% end %>
+            <% end %>
+          </strong>
+        </div>
       </div>
       <div class="row">
       </div>
     </div>
     <div class="col-md-8">
       <h2>
-        <%= link_to @book.title, "#" %>
+        <div class="row">
+          <%= @book.title %>
+        </div>
       </h2>
-      <label><%= t "book.show.author" %></label>
-      <%= @book.author %></br>
-      <label><%= t "book.show.description" %></label></br>
-      <%= @book.description %>
+      <div class="row">
+        <label><%= t "book.show.author" %></label>
+        <%= @book.author %>
+      </div>
+      <div class="row">
+        <label><%= t "book.show.description" %></label>
+        <%= @book.description %>
+      </div>
     </div>
   </div>
 </div>

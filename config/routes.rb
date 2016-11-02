@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   resources :categories, only: :show
   resources :requests, except: [:show, :edit, :update]
   resources :relationships, only: [:create, :destroy, :index]
-  resources :activities do
+  resources :activities, only: :index do
     resources :like_activities, only: [:create, :destroy]
   end
 end

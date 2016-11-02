@@ -67,10 +67,10 @@ ActiveRecord::Schema.define(version: 20161017095348) do
 
   create_table "like_activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
-    t.integer  "activities_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["activities_id"], name: "index_like_activities_on_activities_id", using: :btree
+    t.integer  "activity_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["activity_id"], name: "index_like_activities_on_activity_id", using: :btree
     t.index ["user_id"], name: "index_like_activities_on_user_id", using: :btree
   end
 
@@ -111,11 +111,11 @@ ActiveRecord::Schema.define(version: 20161017095348) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.boolean  "is_admin"
+    t.boolean  "is_admin",        default: false
     t.string   "gravatar"
     t.string   "remember_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   add_foreign_key "activities", "users"
@@ -124,7 +124,7 @@ ActiveRecord::Schema.define(version: 20161017095348) do
   add_foreign_key "books", "categories"
   add_foreign_key "comments", "review_rates"
   add_foreign_key "comments", "users"
-  add_foreign_key "like_activities", "activities", column: "activities_id"
+  add_foreign_key "like_activities", "activities"
   add_foreign_key "like_activities", "users"
   add_foreign_key "requests", "users"
   add_foreign_key "review_rates", "books"
