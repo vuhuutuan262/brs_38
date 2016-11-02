@@ -22,6 +22,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: {minimum: 6}, allow_blank: true
 
   scope :all_user_not_admin, -> {where is_admin: false}
+  scope :desc_created, -> {order created_at: :desc}
   
   class << self
     def digest string

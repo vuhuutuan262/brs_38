@@ -29,7 +29,7 @@ class BooksController < ApplicationController
   def load_categories
     @categories = Category.all
     if @categories.blank?
-      flash[:danger] = t "categories.controller."
+      flash.now[:danger] = t "views.requests.edit.find_book_fail"
     end
   end
 
